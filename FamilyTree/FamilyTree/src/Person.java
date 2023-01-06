@@ -1,5 +1,7 @@
 package src;
 
+import java.util.Date;
+
 public class Person {
     public static String FullName;
     public static String Partner;
@@ -48,6 +50,10 @@ public class Person {
     }
 
     public static void Add() {
+    }
+
+    public static Date getGender() {
+        return null;
     }
 
 }

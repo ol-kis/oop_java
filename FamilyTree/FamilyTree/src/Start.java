@@ -8,13 +8,17 @@ public class Start {
         System.out.println(
                 "если вы ходитете добавить нового человека - введите 1 \n если вы ходитете узнать статус человека - введите 2 \n если хотите выйте - введите 3");
         int menu = Integer.parseInt(System.console().readLine());
+        Prog.File();
         if (menu == 1) {
             Prog.Add();
-            Prog.Write(Prog.GetSheet(), Prog.lastCell(Prog.GetSheet()));
-            // Prog.GetWorkBook());
+            Prog.Write(WorkBook.GetSheet(), Prog.lastCell(WorkBook.GetSheet()), WorkBook.GetOutputStream(),
+                    WorkBook.GetWorkbook());
+
         }
         if (menu == 2) {
-            // Prog.show();
+            Prog.NameSearch();
+            Prog.Read(WorkBook.GetSheet(), Prog.lastCell(WorkBook.GetSheet()), WorkBook.GetOutputStream(),
+                    WorkBook.GetWorkbook());
         }
         if (menu == 3) {
             System.exit(1);
