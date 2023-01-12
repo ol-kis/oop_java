@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package chat;
 
 public class Pro {
 
@@ -25,69 +25,22 @@ public class Pro {
     }
 }
 
-class User {
-    String name;
-    private Chatroom chatroom;
+// class PrivateChat implements Chatroom {
 
-    public User(String name, Chatroom chatroom) {
-        this.name = name;
-        this.chatroom = chatroom;
-    }
+// @Override
+// public void sendMessage(String msg, User user) {
+// // TODO Auto-generated method stub
 
-    void printMessage(String msg) {
-        System.out.printf(" Всем пользователям %s : %s\n", name, msg);
-    }
+// }
 
-    void printNewMessage(String msg, String msgNew) {
-        System.out.printf(" Всем пользователям: %s изменил(а) свое сообщение %s на %s\n", name, msg, msgNew);
-    }
+// @Override
+// public void appendClient(User user) {
+// // TODO Auto-generated method stub
 
-    void sendMsg(String text) {
-        chatroom.sendMessage(text, this);
-    }
+// }
 
-    void editingMessage(String text, String textNew) {
-        chatroom.editingMessage(text, this, textNew);
-    }
-}
+// @Override
+// public void editingMessage(String msg, User user, String textNew) {
+// // TODO Auto-generated method stub
 
-interface Chatroom {
-    void sendMessage(String msg, User user);
-
-    void appendClient(User user);
-
-    void editingMessage(String msg, User user, String textNew);
-
-}
-
-class Chat implements Chatroom {
-
-    ArrayList<User> users = new ArrayList<>();
-
-    @Override
-    public void sendMessage(String text, User me) {
-
-        for (User user : users) {
-            if (user.name == me.name) {
-                user.printMessage(text);
-            }
-        }
-    }
-
-    @Override
-    public void appendClient(User client) {
-        System.out.println("\n >>> Добавился " + client.name);
-        users.add(client);
-
-    }
-
-    @Override
-    public void editingMessage(String text, User me, String textNew) {
-        for (User user : users) {
-            if (user.name == me.name) {
-                user.printNewMessage(text, textNew);
-            }
-        }
-    }
-
-}
+// }
