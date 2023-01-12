@@ -17,10 +17,11 @@ public class Start {
         }
         if (menu == 2) {
             Prog.NameSearch();
-            Prog.Read(WorkBook.GetSheet(), Prog.lastCell(WorkBook.GetSheet()), WorkBook.GetOutputStream(),
+            Prog.Search(WorkBook.GetSheet(), Prog.lastCell(WorkBook.GetSheet()), WorkBook.GetOutputStream(),
                     WorkBook.GetWorkbook());
         }
         if (menu == 3) {
+            System.out.println("До свидания");
             System.exit(1);
         }
 
