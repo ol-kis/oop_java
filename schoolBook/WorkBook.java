@@ -8,7 +8,7 @@ public class WorkBook {
     public static Workbook WB;
     public static OutputStream OS;
     public static Sheet Sheet;
-    public static String ADRESS = "C://Users//user//Desktop//GeekBrains//PYTHON//java//oop//oop_java//FamilyTree//FamilyTree//src//tree.xls";
+    public static String ADRESS = "C://Users//user//Desktop//GeekBrains//PYTHON//java//oop//oop_java//schoolBook//Классный журнал 7а.xls";
 
     public void SetWorkbook(Workbook WB) {
         this.WB = WB;
@@ -38,9 +38,9 @@ public class WorkBook {
     public void write(OutputStream os2) {
     }
 
-    public static void File() throws IOException {
+    public static void File(Integer a) throws IOException {
         Workbook wb = new HSSFWorkbook(new FileInputStream(ADRESS));
-        Sheet sheet = wb.getSheetAt(0);
+        Sheet sheet = wb.getSheetAt(a);
         OutputStream os = new FileOutputStream(ADRESS);
         WorkBook w1 = new WorkBook();
         w1.SetWorkbook(wb);

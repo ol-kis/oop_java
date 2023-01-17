@@ -1,9 +1,6 @@
-public interface ToDo {
-     void PrintReating ();
-     void AddReating ();
+public interface ForStudent {
+     void PrintReating();
 
+     void PrintAttendance();
 
-    
-
-    
 }

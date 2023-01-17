@@ -1,4 +1,5 @@
-public class Student implements ToDo{
+public class Student implements ForStudent {
+
     public static void run() {
         System.out.println("What do you want? \nView ratings-enter 1\nView attendance -enter 2\nExit- enter 3\n");
         try {
@@ -20,19 +21,17 @@ public class Student implements ToDo{
         }
 
     }
-    
-    
+
     @Override
     public void PrintReating() {
         // TODO Auto-generated method stub
-        
+
     }
+
     @Override
-    public void AddReating() {
+    public void PrintAttendance() {
         // TODO Auto-generated method stub
-        
+
     }
-
-
 
 }
