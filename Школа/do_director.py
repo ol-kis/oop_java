@@ -1,5 +1,6 @@
 import provider as pr
 from datetime import date
+import person as p
 
 
 def append_student():
@@ -8,22 +9,12 @@ def append_student():
     i = pr.empty_line('Ученики')
     sheet.cell(row=i, column=1).value = i-1
     name_student=input("Enter name of student:\n")
-    sheet.cell(row=i, column=2).value = name_student
+    age_student=input("Enter age of student:\n")
+    Student=p.Person(name_student,age_student)
+    sheet.cell(row=i, column=2).value = Student.get_name()
+    sheet.cell(row=i, column=3).value = Student.get_about()
     wb.save(filename='Классный журнал 7а.xlsx')
     wb.close()
-
-def append_teacher():
-    wb = pr.work_book()
-    sheet = wb['Учителя']
-    i = pr.empty_line('Учителя')
-    sheet.cell(row=i, column=1).value = i-1
-    name_teacher=input("Enter name of teacher:\n")
-    sheet.cell(row=i, column=2).value = name_teacher
-    subject_teacher=input("Enter subject of teacher:\n")
-    sheet.cell(row=i, column=3).value = subject_teacher
-    wb.save(filename='Классный журнал 7а.xlsx')
-    wb.close()
-
 
 def see_attendance():
     while True:
@@ -43,6 +34,8 @@ def see_attendance():
                         break
                 elif m == 3:
                         break
+                
+
         except ValueError:
             print("\nYou enter wrong number. Try again!")
 def see_raiting():
@@ -65,7 +58,19 @@ def see_raiting():
                         break
         except ValueError:
             print("\nYou enter wrong number. Try again!")
-
+            
+def append_teacher():
+        wb = pr.work_book()
+        sheet = wb['Учителя']
+        i = pr.empty_line('Учителя')
+        sheet.cell(row=i, column=1).value = i-1
+        name_teacher=input("Enter name of teacher:\n")
+        subject_teacher=input("Enter subject of teacher:\n")
+        Teacher=p.Person(name_teacher,subject_teacher)
+        sheet.cell(row=i, column=2).value = Teacher.get_name()
+        sheet.cell(row=i, column=3).value = Teacher.get_about()
+        wb.save(filename='Классный журнал 7а.xlsx')
+        wb.close()
 
 def start_director():
     password = input("Enter the password:\n ")
@@ -91,5 +96,8 @@ def start_director():
                         append_student()
                 if n == 5:
                         break
+                
+
         except ValueError:
-            print("\nYou enter wrong number. Try again!")
+            print("\nYou enter wrong number. Try again!")           
+       
