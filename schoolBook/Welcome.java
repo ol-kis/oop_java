@@ -1,5 +1,3 @@
-package schoolBook;
-
 public class Welcome {
     public static void run() {
         System.out.println("Welcome to the school magazine");
